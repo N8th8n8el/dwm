@@ -14,7 +14,7 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const unsigned int baralpha        = 0xd0;
 static const unsigned int borderalpha     = OPAQUE;
-static const char *alphas[][3]      = {
+static const unsigned int *alphas[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { borderalpha, baralpha, OPAQUE },
 	[SchemeSel]  = { borderalpha, baralpha, OPAQUE },
