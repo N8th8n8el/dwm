@@ -201,7 +201,7 @@ drw_clr_create(Drw *drw, Clr *dest, const char *clrname, unsigned int alpha)
 	if (!drw || !dest || !clrname)
 		return;
 
-	if (!XftColorAllocName(drw->dpy, drw->visual, drw->cmap, clrname, &clr->rgb))
+	if (!XftColorAllocName(drw->dpy, drw->visual, drw->cmap, clrname, dest))
 		die("error, cannot allocate color '%s'", clrname);
 }
 
@@ -218,7 +218,7 @@ drw_scm_create(Drw *drw, const char *clrnames[], size_t clrcount)
 		return NULL;
 
 	for (i = 0; i < clrcount; i++)
-		drw_clr_create(drw, &ret[i], clrnames[i]);
+		drw_clr_create(drw, &ret[i], clrnames[i], 255);
 	return ret;
 }
 
