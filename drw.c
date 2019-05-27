@@ -219,7 +219,6 @@ drw_scm_create(Drw *drw, const char *clrnames[], const unsigned int alphas[], si
 		return NULL;
 
 	for (i = 0; i < clrcount; i++)
-		drw_clr_create(drw, &ret[i], clrnames[i]);
 		drw_clr_create(drw, &ret[i], clrnames[i], alphas[i]);
 	return ret;
 }
